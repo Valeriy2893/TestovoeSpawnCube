@@ -48,6 +48,14 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+    "com.unity.recorder": {
+      "version": "file:C:/Users/admin/Desktop/ProjectByKazakov/Testovoe2/Library/PackageCache/com.unity.recorder@3.0.3",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {
+        "com.unity.timeline": "1.0.0"
+      }
+    },
     "com.unity.services.core": {
       "version": "1.4.2",
       "depth": 1,
