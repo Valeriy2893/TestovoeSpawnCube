@@ -11,16 +11,30 @@ public class UI : MonoBehaviour
     private bool check;
     private Text textError;
 
+    public static UI instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+        DontDestroyOnLoad(gameObject);
+
+    }
+
     private void Start()
     {
         textSpeed = GameObject.Find("InputFieldSpeed").GetComponent<InputField>();
         textCooldown = GameObject.Find("InputFieldCooldown").GetComponent<InputField>();
         textDistanse = GameObject.Find("InputFieldDistanse").GetComponent<InputField>();
 
-        DontDestroyOnLoad(gameObject);
-
         textError = GameObject.Find("TextError").GetComponent<Text>();
-
     }
     public void PressStart()
     {
@@ -40,6 +54,7 @@ public class UI : MonoBehaviour
         if (int.Parse(textDistanse.text) > 0 && int.Parse(textCooldown.text) > 0 && (int.Parse(textSpeed.text) > 0))
         {
             check = true;
+
         }
         else
         {
